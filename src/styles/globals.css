@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./normalize.css";
+
+@layer base {
+  @font-face {
+    font-family: "TT Smalls";
+    src: url("../fonts/TTSmalls-Bold.woff") format("woff");
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: "TT Smalls";
+    src: url("../fonts/TTSmalls-SemiBold.woff") format("woff");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "TT Smalls";
+    src: url("../fonts/TTSmalls-Medium.woff") format("woff");
+    font-weight: 400;
+  }
+  body {
+    box-sizing: border-box;
+  }
+}
+@layer components {
+  .flex-start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .tab {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 12px 40px;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: theme("colors.grey");
+    transition: all 200ms linear;
+
+    border: 2px solid theme("colors.light8");
+    border-bottom: none;
+  }
+
+  .tab-active {
+    padding: 12px 40px;
+    border-radius: 8px 8px 0px 0px;
+    color: theme("colors.contrast1");
+    box-shadow: inset 0px 4px 8px theme("colors.shadow16");
+
+    border-bottom: none;
+  }
+
+  .card {
+    background-color: theme("colors.primary");
+    height: 80px;
+    width: 296px;
+    border-radius: 8px;
+    padding: 22px 16px 18px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    border: 2px solid theme("colors.primary");
+  }
+
+  .card:active {
+    border: 2px solid theme("colors.contrast1");
+  }
+
+  .checkbox + label > span.checkflag {
+    display: block;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 2px solid theme("colors.light8");
+    border-radius: 4px;
+  }
+  .inputName {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid theme("colors.light8");
+    width: 100%;
+    height: 48px;
+    padding: 14px 16px;
+    color: theme("colors.light");
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  /* .checkflag:checked {
+    border: 2px solid theme("colors.contrast1");
+  } */
+}
