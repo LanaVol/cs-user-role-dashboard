@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout/Layout";
 import Head from "next/head";
 import localFont from "next/font/local";
+import { StoreProvider } from "@/components/providers/StoreProvider/ui/StoreProvider";
 import "@/styles/globals.css";
 
 const ttSmalls = localFont({
@@ -27,7 +28,7 @@ const ttSmalls = localFont({
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <StoreProvider>
       <Head>
         <title>User Role Dashboard</title>
       </Head>
@@ -36,6 +37,6 @@ export default function App({ Component, pageProps }) {
       >
         <Component {...pageProps} />
       </Layout>
-    </>
+    </StoreProvider>
   );
 }
