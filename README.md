@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Project "Position Management"
 
-## Getting Started
+## Description
 
-First, run the development server:
+This project is developed using Next.js and provides minimal functionality for managing positions within a company.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Preview Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Link to preview: https://lanavol.github.io/RatingBet/
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Clicking the "Create New Position" button reveals a card that can be filled out.
+- Cards can be dragged and dropped using the Drag & Drop method.
+- The top tabs of the application allow switching between different sections, with the body of the application remaining empty.
+- The "Positions" section has styled according to the [design mockup](https://www.figma.com/file/i0nWnfM1ejZvFZyvbEktlA/Cogitize-Solutions?type=design&node-id=0-13&mode=design&t=2trGLEYA5cbgSw7b-0).
+- The "Name" block contains an input for entering a name.
+- The "Duties" block contains a list of checkboxes with the ability to edit.
 
-## Learn More
+## Key Requirements and Achievements
 
-To learn more about Next.js, take a look at the following resources:
+- Used the Next.js framework for development.
+- Used Tailwind CSS for styling the application.
+- Used Formik & Yup for validation card form.
+- Utilized Redux Toolkit for creating the main global state store for components and interaction between them..
+- Implemented Redux persistor for saving the state of the task list when the page is reloaded
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Instructions for Running the Application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Install dependencies using the command `npm install`.
+2. Run the application with the command `npm run dev`.
+3. Open a web browser and navigate to [http://localhost:3000](http://localhost:3000).
