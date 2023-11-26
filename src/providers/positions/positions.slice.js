@@ -15,7 +15,38 @@ import { createSlice } from "@reduxjs/toolkit";
 export const positionsSlice = createSlice({
   name: "position",
   initialState: /** @type {InitialState} */ ({
-    data: [],
+    data: [
+      {
+        id: "634f703b-1eb2-4bb4-a92b-f551257e1b5a",
+        positionName: "Новобранец",
+        salary: "50",
+        countTasks: 15,
+        permits: [
+          "Дуель",
+          "Выставлять цены",
+          "Закупать сырье",
+          "Выгонять из банды",
+        ],
+      },
+      {
+        id: "99ac6617-32b0-4d94-8e93-9032c90d5de0",
+        positionName: "Рядовой",
+        salary: "80",
+        countTasks: 15,
+        permits: [
+          "Продавать продукт",
+          "Смотреть аналитику",
+          "Выгонять из банды",
+        ],
+      },
+      {
+        id: "e41c6a6e-3109-4034-a65b-66e78f2a68b8",
+        positionName: "Сержант",
+        salary: "100",
+        countTasks: 15,
+        permits: ["Продавать продукт", "Выгонять из банды"],
+      },
+    ],
     currentPositionId: null,
   }),
   reducers: {
