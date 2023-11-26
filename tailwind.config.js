@@ -5,8 +5,8 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/shared/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -25,9 +25,21 @@ module.exports = {
         shadow16: "#6764F116",
         contrast2: "#EFB62B",
         grey: "#9C9CB0",
+        bgGrey: "#26253472",
+        red: "#991b1b",
       },
       boxShadow: {
         titleShadow: "0px 4px 16px #00000024",
+        cardHoverShadow: "4px 8px 40px #00000040",
+        buttonShadow: "0px 4px 40px #6866EA24",
+      },
+      backgroundImage: {
+        background: "url('/bground.png')",
+        cursor: "url('/dragCursor.png')",
+      },
+      cursor: {
+        grab: "url('/dragCursor.png'), grab",
+        pointer: "url('/pointer.jpg'), pointer",
       },
     },
   },

@@ -7,17 +7,17 @@
 @layer base {
   @font-face {
     font-family: "TT Smalls";
-    src: url("../fonts/TTSmalls-Bold.woff") format("woff");
+    src: url("../styles/fonts/TTSmalls-Bold.woff") format("woff");
     font-weight: 800;
   }
   @font-face {
     font-family: "TT Smalls";
-    src: url("../fonts/TTSmalls-SemiBold.woff") format("woff");
+    src: url("../styles/fonts/TTSmalls-SemiBold.woff") format("woff");
     font-weight: 600;
   }
   @font-face {
     font-family: "TT Smalls";
-    src: url("../fonts/TTSmalls-Medium.woff") format("woff");
+    src: url("../styles/fonts/TTSmalls-Medium.woff") format("woff");
     font-weight: 400;
   }
   body {
@@ -32,7 +32,10 @@
   }
 
   .tab {
-    width: 100%;
+    width: 254px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
     height: auto;
     text-align: center;
     padding: 12px 40px;
@@ -41,10 +44,10 @@
     line-height: 24px;
     font-weight: 500;
     color: theme("colors.grey");
+    background-color: theme("colors.dark");
     transition: all 200ms linear;
 
     border: 2px solid theme("colors.light8");
-    border-bottom: none;
   }
 
   .tab-active {
@@ -52,8 +55,9 @@
     border-radius: 8px 8px 0px 0px;
     color: theme("colors.contrast1");
     box-shadow: inset 0px 4px 8px theme("colors.shadow16");
-
-    border-bottom: none;
+    z-index: 20;
+    overflow: visible;
+    border-bottom: 2px solid transparent;
   }
 
   .card {
@@ -64,15 +68,21 @@
     padding: 22px 16px 18px 16px;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     border: 2px solid theme("colors.primary");
+    cursor: pointer;
   }
 
-  .card:active {
+  .card:hover {
+    box-shadow: theme("boxShadow.cardHoverShadow");
+    transition: box-shadow 200ms linear;
+  }
+
+  .card-active {
     border: 2px solid theme("colors.contrast1");
   }
 
-  .checkbox + label > span.checkflag {
+  .checkflag {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -94,10 +104,38 @@
     font-weight: 500;
   }
 
-  input[type="checkbox"]:checked + label > span.checkflag {
-    border: 2px solid theme("colors.contrast1");
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .inputCard {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid theme("colors.light8");
+    width: 100%;
+    height: 16px;
+    padding: 14px 16px;
+    color: theme("colors.light");
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  .scrollbar:hover {
+    overflow-y: scroll;
+  }
+
+  .scrollbar:hover > * {
+    margin-right: 1px;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 2px;
+    position: absolute;
+    right: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: theme("colors.contrast1");
+    border-radius: 5px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: theme("colors.dark");
   }
 }
