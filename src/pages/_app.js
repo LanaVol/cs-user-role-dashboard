@@ -7,17 +7,17 @@ import "@/styles/globals.css";
 const ttSmalls = localFont({
   src: [
     {
-      path: "../fonts/TTSmalls-Bold.woff",
+      path: "../styles/fonts/TTSmalls-Bold.woff",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../fonts/TTSmalls-Medium.woff",
+      path: "../styles/fonts/TTSmalls-Medium.woff",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/TTSmalls-SemiBold.woff",
+      path: "../styles/fonts/TTSmalls-SemiBold.woff",
       weight: "500",
       style: "normal",
     },
@@ -32,11 +32,13 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>User Role Dashboard</title>
       </Head>
-      <Layout
-        className={`${ttSmalls.className} font-ttsmalls w-full min-h-screen`}
-      >
-        <Component {...pageProps} />
-      </Layout>
+      <main className="bg-background bg-no-repeat bg-cover bg-center">
+        <Layout
+          className={`${ttSmalls.className} font-ttsmalls w-full min-h-screen bg-bgGrey`}
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </main>
     </StoreProvider>
   );
 }
