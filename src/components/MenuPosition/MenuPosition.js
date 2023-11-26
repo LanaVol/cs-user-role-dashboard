@@ -1,24 +1,25 @@
-import React, { useCallback, useState } from "react";
-import NameBlock from "../NameBlock/NameBlock";
+import React, { useCallback, useEffect, useState } from "react";
+import NameBlock from "../../shared/NameBlock/NameBlock";
 import Duties from "../Duties/Duties";
-import Button from "../shared/Button/Button";
-import { useDispatch, useSelector } from "react-redux";
-import { getPositionData } from "../providers/positions/selectors";
-import { Position } from "../ListPosition/model/position";
+import { useDispatch } from "react-redux";
 import { positionActions } from "../providers/positions/positions.slice";
+import Button from "@/shared/Button/Button";
 
-function MenuPosition() {
-  const [value, setValue] = useState("");
-  const positions = useSelector(getPositionData);
+function MenuPosition({ activeObject }) {
+  const [value, setValue] = useState(activeObject.positionName);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setValue(activeObject.positionName);
+  }, [activeObject]);
 
   const handleChange = useCallback((newValue) => setValue(newValue), []);
 
   const handleSubmit = useCallback(() => {
-    const position = new Position(value);
-    dispatch(positionActions.addNewPosition(position));
+    const updatedCard = { ...activeObject, positionName: value };
+    dispatch(positionActions.updatePosition(updatedCard));
     setValue("");
-  }, [value, dispatch]);
+  }, [value, dispatch, activeObject]);
 
   return (
     <form className="w-full max-w-[592px] p-4 bg-primary flex flex-col gap-[15px] rounded-lg">
@@ -29,7 +30,7 @@ function MenuPosition() {
           Обязанности
         </h3>
         <div className="pl-[5px] z-0 ">
-          <Duties />
+          <Duties activeObject={activeObject} />
           <Button text="Сохранить" className="w-full" onClick={handleSubmit} />
         </div>
       </div>
