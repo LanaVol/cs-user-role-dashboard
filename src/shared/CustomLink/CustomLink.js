@@ -7,7 +7,7 @@ export const CustomLink = ({ href, title, className = "" }) => {
   return (
     <Link
       href={href}
-      className={`${className} tab ${
+      className={`${className} tab cursor-pointer ${
         router.asPath === href ? "tab-active" : ""
       }`}
     >
