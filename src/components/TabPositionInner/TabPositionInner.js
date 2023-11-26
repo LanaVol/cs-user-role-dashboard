@@ -43,7 +43,7 @@ function TabPositionInner() {
       {activeObject ? (
         <MenuPosition activeObject={activeObject} />
       ) : (
-        <div className="w-full max-w-[592px] p-4 bg-primary rounded-lg text-grey">
+        <div className="w-full text-center max-w-[592px] p-4 bg-primary rounded-lg text-grey">
           Нет информации или не выбрана карта должности
         </div>
       )}

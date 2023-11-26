@@ -6,7 +6,7 @@ This project is developed using Next.js and provides minimal functionality for m
 
 # Preview Project
 
-Link to preview: https://lanavol.github.io/RatingBet/
+Link to preview: https://cs-user-role-dashboard.vercel.app/
 
 ## Functionality
 

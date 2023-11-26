@@ -113,6 +113,13 @@ function ListPosition({ className }) {
               </Draggable>
             ))}
             {provided.placeholder}
+            {!positions.length ? (
+              <div className="w-full text-center max-w-[592px] p-4 bg-primary rounded-lg text-grey">
+                Создайте новую должность
+              </div>
+            ) : (
+              ""
+            )}
           </ul>
         )}
       </Droppable>
