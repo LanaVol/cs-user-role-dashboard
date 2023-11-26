@@ -1,5 +1,16 @@
 import React, { memo } from "react";
 
+/**
+ * NameBlock component for rendering a block with a label and an input for the name.
+ *
+ * @component
+ *
+ * @param {Object} props - The properties of the NameBlock component.
+ * @param {string} props.value - The value of the input field.
+ * @param {function} props.handleChange - The function to handle changes in the input field.
+ *
+ * @returns {React.Component} Returns the NameBlock component.
+ */
 export const NameBlock = memo((props) => {
   const { value, handleChange } = props;
 

@@ -1,5 +1,19 @@
 import React from "react";
 
+/**
+ * Button component for user interaction.
+ *
+ * @component
+ *
+ * @param {Object} props - The properties of the Button component.
+ * @param {string} [props.text] - The text to be displayed on the button.
+ * @param {string} [props.className] - Additional CSS classes for styling.
+ * @param {function} [props.onClick] - The function to be executed on button click.
+ * @param {React.Component} [props.Component] - Custom component to be rendered inside the button.
+ * @param {string} [props.type] - The type of the button (e.g., "button", "submit").
+ *
+ * @returns {React.Component} Returns the Button component.
+ */
 function Button({ text, className, onClick, Component, type }) {
   return (
     <button

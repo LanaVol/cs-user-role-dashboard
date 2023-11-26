@@ -1,6 +1,18 @@
 import React, { memo } from "react";
 import { SvgAgreeIcon } from "../Icons";
 
+/**
+ * CheckboxItem component for displaying a checkbox with a label.
+ *
+ * @component
+ *
+ * @param {Object} props - The properties of the CheckboxItem component.
+ * @param {string} props.label - The label text for the checkbox.
+ * @param {boolean} props.isChecked - A boolean indicating whether the checkbox is checked.
+ * @param {function} props.handlePermitToggle - The function to be called when the checkbox is toggled.
+ *
+ * @returns {React.Component} Returns the CheckboxItem component.
+ */
 export const CheckboxItem = memo(({ label, isChecked, handlePermitToggle }) => {
   return (
     <li className="flex-start">

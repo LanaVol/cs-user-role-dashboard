@@ -7,10 +7,26 @@ import * as Yup from "yup";
 import Button from "../Button/Button";
 import { SvgCloseIcon, SvgSaveIcon } from "../Icons";
 
+/**
+ * ItemPositionInput component for creating a new position input form.
+ *
+ * @component
+ *
+ * @param {Object} props - The properties of the ItemPositionInput component.
+ * @param {function} props.handleShowForm - The function to handle showing the form.
+ *
+ * @returns {React.Component} Returns the ItemPositionInput component.
+ */
 export const ItemPositionInput = memo((props) => {
   const { handleShowForm } = props;
   const dispatch = useDispatch();
 
+  /**
+   * Create a new position and dispatch the action.
+   *
+   * @param {Object} values - The form values containing name and salary.
+   * @param {Object} formikHelpers - Formik helper functions (e.g., resetForm).
+   */
   const createNewPosition = useCallback(
     ({ name, salary }, { resetForm }) => {
       dispatch(
@@ -22,6 +38,7 @@ export const ItemPositionInput = memo((props) => {
     [dispatch, handleShowForm]
   );
 
+  // Validation schema for the form
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .matches(/^[A-Za-zА-Яа-я]+$/, "Only letters are allowed")
@@ -36,6 +53,7 @@ export const ItemPositionInput = memo((props) => {
       .required("Required"),
   });
 
+  // Formik hook for handling form state and submission
   const formik = useFormik({
     initialValues: {
       name: "",

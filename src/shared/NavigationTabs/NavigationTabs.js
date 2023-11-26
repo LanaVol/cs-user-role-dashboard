@@ -1,6 +1,13 @@
 import React from "react";
 import { CustomLink } from "../CustomLink/CustomLink";
 
+/**
+ * NavigationTabs component for rendering navigation links.
+ *
+ * @component
+ *
+ * @returns {React.Component} Returns the NavigationTabs component.
+ */
 function NavigationTabs() {
   return (
     <nav className="flex justify-between -space-x-4">

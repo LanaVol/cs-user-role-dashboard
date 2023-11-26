@@ -6,10 +6,19 @@ import MenuPosition from "../MenuPosition/MenuPosition";
 import ListPosition from "../ListPosition/ListPosition";
 import Button from "../../shared/Button/Button";
 
+/**
+ * TabPositionInner component representing the inner tab for position-related actions.
+ * @component
+ * @returns {JSX.Element} - The JSX for the TabPositionInner component.
+ */
 function TabPositionInner() {
   const [isClicked, setIsClicked] = useState(false);
   const activeObject = useSelector(getActivePositionInfo);
 
+  /**
+   * Toggles the display of the position creation form.
+   * @function
+   */
   const handleShowForm = useCallback(() => {
     setIsClicked((prev) => !prev);
   }, []);

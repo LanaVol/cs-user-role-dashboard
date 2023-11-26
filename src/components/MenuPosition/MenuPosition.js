@@ -5,6 +5,13 @@ import { NameBlock } from "../../shared/NameBlock/NameBlock";
 import Duties from "../Duties/Duties";
 import Button from "@/shared/Button/Button";
 
+/**
+ * MenuPosition component representing the menu for a specific position.
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Object} props.activeObject - The active position object.
+ * @returns {JSX.Element} - The JSX for the MenuPosition component.
+ */
 function MenuPosition({ activeObject }) {
   const [value, setValue] = useState(activeObject.positionName);
   const dispatch = useDispatch();
@@ -13,8 +20,17 @@ function MenuPosition({ activeObject }) {
     setValue(activeObject.positionName);
   }, [activeObject]);
 
+  /**
+   * Handles the change in the position name input.
+   * @function
+   * @param {string} newValue - The new value of the position name.
+   */
   const handleChange = useCallback((newValue) => setValue(newValue), []);
 
+  /**
+   * Handles the form submission to update the position name.
+   * @function
+   */
   const handleSubmit = useCallback(() => {
     const updatedCard = { ...activeObject, positionName: value };
     dispatch(positionActions.updatePosition(updatedCard));

@@ -8,11 +8,23 @@ import { positionActions } from "../../providers/positions/positions.slice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { ItemPosition } from "../../shared/ItemPosition/ItemPosition";
 
+/**
+ * ListPosition component representing the list of positions with drag-and-drop functionality.
+ * @component
+ * @param {Object} props - The component props.
+ * @param {string} props.className - Additional class name for styling.
+ * @returns {JSX.Element} - The JSX for the ListPosition component.
+ */
 function ListPosition({ className }) {
   const positions = useSelector(getPositionData);
   const activeCurrentIdPosition = useSelector(getCurrentPositionId);
   const dispatch = useDispatch();
 
+  /**
+   * Handles the activation of a position card.
+   * @function
+   * @param {string} cardId - The ID of the clicked position card.
+   */
   const handleActiveCard = useCallback(
     (cardId) => {
       dispatch(positionActions.setCurrentPositionId(cardId));
@@ -20,6 +32,14 @@ function ListPosition({ className }) {
     [dispatch]
   );
 
+  /**
+   * Reorders the list of positions after a drag-and-drop operation.
+   * @function
+   * @param {Array} list - The list of positions.
+   * @param {number} startIndex - The index of the dragged item before the drop.
+   * @param {number} endIndex - The index of the dragged item after the drop.
+   * @returns {Array} - The reordered list of positions.
+   */
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -30,17 +50,25 @@ function ListPosition({ className }) {
 
   const grid = 8;
 
+  /**
+   * Gets the style for the draggable item during drag-and-drop.
+   * @function
+   * @param {boolean} isDragging - Indicates whether the item is currently being dragged.
+   * @param {Object} draggableStyle - The style object for the draggable item.
+   * @returns {Object} - The combined style object.
+   */
   const getItemStyle = (isDragging, draggableStyle) => ({
-    // some basic styles to make the items look a bit nicer
     userSelect: "none",
     margin: `0 0 ${grid}px 0`,
-
-    // styles we need to apply on draggables
     ...draggableStyle,
   });
 
+  /**
+   * Handles the end of a drag-and-drop operation.
+   * @function
+   * @param {Object} result - The result object containing information about the drop.
+   */
   const onDragEnd = (result) => {
-    // dropped outside the list
     if (!result.destination) {
       return;
     }

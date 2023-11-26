@@ -4,6 +4,10 @@ import localFont from "next/font/local";
 import { StoreProvider } from "@/providers/StoreProvider/ui/StoreProvider";
 import "@/styles/globals.css";
 
+/**
+ * Local font configuration for TTSmalls font family.
+ * @type {object}
+ */
 const ttSmalls = localFont({
   src: [
     {
@@ -26,6 +30,13 @@ const ttSmalls = localFont({
   variable: "--font-ttSmalls",
 });
 
+/**
+ * Main application component.
+ * @param {object} props - Component props.
+ * @param {React.Component} props.Component - The current page component.
+ * @param {object} props.pageProps - Props passed to the page component.
+ * @returns {React.Component} - The main application component.
+ */
 export default function App({ Component, pageProps }) {
   return (
     <StoreProvider>
