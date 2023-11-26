@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from "react";
 import Button from "../Button/Button";
 import { useDispatch } from "react-redux";
 import { Position } from "@/components/ListPosition/model/position";
-import { positionActions } from "@/components/providers/positions/positions.slice";
+import { positionActions } from "@/providers/positions/positions.slice";
 import { SvgCloseIcon, SvgSaveIcon } from "../Icons";
 import { useFormik } from "formik";
 import * as Yup from "yup";

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getCurrentPositionId,
   getPositionData,
-} from "../providers/positions/selectors";
-import { positionActions } from "../providers/positions/positions.slice";
+} from "../../providers/positions/selectors";
+import { positionActions } from "../../providers/positions/positions.slice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function ListPosition({ className }) {

@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout/Layout";
 import Head from "next/head";
 import localFont from "next/font/local";
-import { StoreProvider } from "@/components/providers/StoreProvider/ui/StoreProvider";
+import { StoreProvider } from "@/providers/StoreProvider/ui/StoreProvider";
 import "@/styles/globals.css";
 
 const ttSmalls = localFont({

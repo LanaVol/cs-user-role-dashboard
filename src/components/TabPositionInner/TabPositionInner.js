@@ -4,7 +4,7 @@ import Button from "../../shared/Button/Button";
 import MenuPosition from "../MenuPosition/MenuPosition";
 import { ItemPositionInput } from "../../shared/ItemPositionInput/ItemPositionInput";
 import { useSelector } from "react-redux";
-import { getActivePositionInfo } from "../providers/positions/selectors";
+import { getActivePositionInfo } from "../../providers/positions/selectors";
 
 function TabPositionInner() {
   const [isClicked, setIsClicked] = useState(false);

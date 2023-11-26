@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import CheckboxList from "../../shared/CheckboxList/CheckboxList";
 import { useDispatch } from "react-redux";
-import { positionActions } from "../providers/positions/positions.slice";
+import { positionActions } from "../../providers/positions/positions.slice";
 
 const dutiesItems = [
   { trade: ["Продавать продукт", "Выставлять цены", "Смотреть аналитику"] },
