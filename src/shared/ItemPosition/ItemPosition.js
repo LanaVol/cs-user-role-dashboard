@@ -24,9 +24,11 @@ export const ItemPosition = memo(({ position, handleActiveCard, isActive }) => {
       <div className={`flex-start gap-4`}>
         <SvgCardElement className="cursor-grab" />
         <div>
-          <p className="text-sm font-semibold leading-5 text-light">
-            {positionName}
-          </p>
+          <div className="inputName__short">
+            <p className="text-sm font-semibold leading-5 text-light">
+              {positionName}
+            </p>
+          </div>
 
           <p className="text-xs font-semibold leading-[18px] text-secondary">
             {countTasks} заданий

@@ -104,6 +104,14 @@
     font-weight: 500;
   }
 
+  .inputName__short {
+    max-width: 150px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   .inputCard {
     border-radius: 8px;
     background-color: transparent;
