@@ -1,11 +1,11 @@
-import { memo, useCallback, useState } from "react";
-import Button from "../Button/Button";
+import { memo, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { Position } from "@/components/ListPosition/model/position";
 import { positionActions } from "@/providers/positions/positions.slice";
-import { SvgCloseIcon, SvgSaveIcon } from "../Icons";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Button from "../Button/Button";
+import { SvgCloseIcon, SvgSaveIcon } from "../Icons";
 
 export const ItemPositionInput = memo((props) => {
   const { handleShowForm } = props;
@@ -107,7 +107,6 @@ export const ItemPositionInput = memo((props) => {
         <div className="flex justify-between gap-1">
           <Button
             Component={<SvgSaveIcon />}
-            // onClick={createNewPosition}
             type={"submit"}
             className={"py-2"}
           />

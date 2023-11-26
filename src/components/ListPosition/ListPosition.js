@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-import ItemPosition from "../../shared/ItemPosition/ItemPosition";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getCurrentPositionId,
@@ -7,6 +6,7 @@ import {
 } from "../../providers/positions/selectors";
 import { positionActions } from "../../providers/positions/positions.slice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { ItemPosition } from "../../shared/ItemPosition/ItemPosition";
 
 function ListPosition({ className }) {
   const positions = useSelector(getPositionData);

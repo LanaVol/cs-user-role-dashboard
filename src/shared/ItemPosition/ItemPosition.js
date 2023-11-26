@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { SvgCardElement } from "../Icons";
 
-function ItemPosition({ position, handleActiveCard, isActive }) {
+export const ItemPosition = memo(({ position, handleActiveCard, isActive }) => {
   const { id, positionName, countTasks, salary } = position;
 
   return (
@@ -29,6 +29,6 @@ function ItemPosition({ position, handleActiveCard, isActive }) {
       </div>
     </div>
   );
-}
+});
 
-export default ItemPosition;
+// export default ItemPosition;

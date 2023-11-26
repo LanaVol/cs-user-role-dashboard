@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
-import ListPosition from "../ListPosition/ListPosition";
-import Button from "../../shared/Button/Button";
-import MenuPosition from "../MenuPosition/MenuPosition";
-import { ItemPositionInput } from "../../shared/ItemPositionInput/ItemPositionInput";
 import { useSelector } from "react-redux";
 import { getActivePositionInfo } from "../../providers/positions/selectors";
+import { ItemPositionInput } from "../../shared/ItemPositionInput/ItemPositionInput";
+import MenuPosition from "../MenuPosition/MenuPosition";
+import ListPosition from "../ListPosition/ListPosition";
+import Button from "../../shared/Button/Button";
 
 function TabPositionInner() {
   const [isClicked, setIsClicked] = useState(false);

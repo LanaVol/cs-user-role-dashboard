@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { SvgAgreeIcon } from "../Icons";
 
-function CheckboxItem({ label, isChecked, handlePermitToggle }) {
+export const CheckboxItem = memo(({ label, isChecked, handlePermitToggle }) => {
   return (
     <li className="flex-start">
       <input
@@ -26,6 +26,4 @@ function CheckboxItem({ label, isChecked, handlePermitToggle }) {
       </label>
     </li>
   );
-}
-
-export default CheckboxItem;
+});

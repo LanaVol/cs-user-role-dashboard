@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-function NameBlock(props) {
+export const NameBlock = memo((props) => {
   const { value, handleChange } = props;
 
   return (
@@ -22,6 +22,4 @@ function NameBlock(props) {
       />
     </div>
   );
-}
-
-export default NameBlock;
+});

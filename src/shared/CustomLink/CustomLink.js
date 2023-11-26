@@ -1,7 +1,8 @@
+import { memo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export const CustomLink = ({ href, title, className = "" }) => {
+export const CustomLink = memo(({ href, title, className = "" }) => {
   const router = useRouter();
 
   return (
@@ -14,4 +15,4 @@ export const CustomLink = ({ href, title, className = "" }) => {
       {title}
     </Link>
   );
-};
+});

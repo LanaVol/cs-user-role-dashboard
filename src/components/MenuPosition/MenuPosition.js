@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
-import NameBlock from "../../shared/NameBlock/NameBlock";
-import Duties from "../Duties/Duties";
 import { useDispatch } from "react-redux";
 import { positionActions } from "../../providers/positions/positions.slice";
+import { NameBlock } from "../../shared/NameBlock/NameBlock";
+import Duties from "../Duties/Duties";
 import Button from "@/shared/Button/Button";
 
 function MenuPosition({ activeObject }) {
