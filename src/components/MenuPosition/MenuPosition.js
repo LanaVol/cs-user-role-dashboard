@@ -60,7 +60,7 @@ function MenuPosition({ activeObject }) {
             />
             <Button
               Component={<SvgDeleteIcon />}
-              className="w-14"
+              className="w-14 max-w-[56px]"
               onClick={handleDelete}
             />
           </div>
