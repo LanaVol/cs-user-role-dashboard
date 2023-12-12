@@ -4,6 +4,7 @@ import { positionActions } from "../../providers/positions/positions.slice";
 import { NameBlock } from "../../shared/NameBlock/NameBlock";
 import Duties from "../Duties/Duties";
 import Button from "@/shared/Button/Button";
+import { SvgDeleteIcon } from "@/shared/Icons";
 
 /**
  * MenuPosition component representing the menu for a specific position.
@@ -27,6 +28,10 @@ function MenuPosition({ activeObject }) {
    */
   const handleChange = useCallback((newValue) => setValue(newValue), []);
 
+  const handleDelete = () => {
+    dispatch(positionActions.deleteCurrentPosition(activeObject.id));
+  };
+
   /**
    * Handles the form submission to update the position name.
    * @function
@@ -47,7 +52,18 @@ function MenuPosition({ activeObject }) {
         </h3>
         <div className="pl-[5px] z-0 ">
           <Duties activeObject={activeObject} />
-          <Button text="Сохранить" className="w-full" onClick={handleSubmit} />
+          <div className="flex gap-2">
+            <Button
+              text="Сохранить"
+              className="w-full"
+              onClick={handleSubmit}
+            />
+            <Button
+              Component={<SvgDeleteIcon />}
+              className="w-14"
+              onClick={handleDelete}
+            />
+          </div>
         </div>
       </div>
     </form>

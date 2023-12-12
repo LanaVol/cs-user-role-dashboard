@@ -114,6 +114,11 @@ export const positionsSlice = createSlice({
     setDataList: (state, { payload }) => {
       state.data = payload;
     },
+
+    deleteCurrentPosition: (state, { payload }) => {
+      console.log(payload);
+      state.data = state.data.filter((position) => position.id !== payload);
+    },
   },
 });
 
